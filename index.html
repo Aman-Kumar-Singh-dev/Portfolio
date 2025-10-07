@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <meta name="theme-color" content="#1f242d">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; font-src 'self' https://unpkg.com; connect-src 'self'; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+    <title>Responsive Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <nav class="navbar">
+        <i class='bx bx-menu' id="menu-icon" role="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false" tabindex="0"></i>
+        <nav class="navbar" id="primary-navigation">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#portfolio">Project</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -30,27 +34,26 @@
             <h3>And I'm a <span class="multiple-text"></span></h3>
             <p>I'm a passionate web developer with expertise in creating user-friendly websites.</p>
             <div class="social-media">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/Aman-Kumar-Singh-dev" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="#" aria-label="Visit Facebook profile"><i class='bx bxl-facebook'></i></a>
+                <a href="#" aria-label="Visit Twitter profile"><i class='bx bxl-twitter'></i></a>
+                <a href="#" aria-label="Visit LinkedIn profile"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/Aman-Kumar-Singh-dev" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile"><i class='bx bxl-github'></i></a>
             </div>
             <a href="#contact" class="btn">Contact Me</a>
         </div>
         <div class="home-img">
-            <img src="Profile.png" alt="Profile">
+            <img src="Profile.png" alt="Portrait of Aman Kumar Singh" loading="lazy">
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="About.png" alt="About">
+            <img src="About.png" alt="Aman about section illustration" loading="lazy">
         </div>
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
             <h3>Web Developer</h3>
-            <p>“Hi, I’m Aman Kumar Singh, a BCA student at GNIOT Institute of Management. I have a strong interest in technology, programming, and creative problem-solving. Along with my knowledge of C and C++, I’ve gained experience in teamwork and leadership by volunteering in my college’s cultural group’s technical team. I also enjoy video editing and exploring new tools to expand my skill set. My goal is to keep learning, improve my communication and technical skills, and grow into a versatile professional ready to take on real-world challenges.”</p>
             <p>I'm a passionate web developer and UI/UX designer with a knack for crafting visually stunning, user-friendly websites and mobile-optimized experiences. Proficient in HTML, CSS, and Java, I specialize in building responsive, intuitive interfaces that blend seamless functionality with engaging design. My goal is to create digital solutions that not only meet user needs but also leave a lasting impression through clean code and thoughtful design.</p>
             <a href="#" class="btn">Read More</a>
         </div>
@@ -87,25 +90,25 @@
         <div class="portfolio-container swiper-container">
             <div class="swiper-wrapper">
                 <div class="portfolio-box swiper-slide">
-                    <img src="images/project1.jpg" alt="Project 1">
+                    <img src="images/project1.jpg" alt="Project 1" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>Project 1</h4>
                         <p>Coming Soon.</p>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
+                        <a href="#" aria-label="Open Project 1"><i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
                 <div class="portfolio-box swiper-slide">
-                    <img src="images/project2.jpg" alt="Project 2">
+                    <img src="images/project2.jpg" alt="Project 2" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>Project 2</h4>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
+                        <a href="#" aria-label="Open Project 2"><i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
                 <div class="portfolio-box swiper-slide">
-                    <img src="images/project3.jpg" alt="Project 3">
+                    <img src="images/project3.jpg" alt="Project 3" loading="lazy">
                     <div class="portfolio-layer">
                         <h4>Project 3</h4>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
+                        <a href="#" aria-label="Open Project 3"><i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
             </div>
@@ -116,17 +119,18 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
             <input type="hidden" name="access_key" value="22a5b885-a270-4360-8368-b3e92e715a24">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important">
             <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="name" placeholder="Full Name" required autocapitalize="words">
+                <input type="email" name="email" placeholder="Email Address" required inputmode="email" autocomplete="email">
             </div>
             <div class="input-box">
-                <input type="text" name="number" placeholder="Mobile Number">
-                <input type="text" name="text" placeholder="Subject">
+                <input type="tel" name="phone" placeholder="Mobile Number" inputmode="tel" autocomplete="tel">
+                <input type="text" name="subject" placeholder="Subject">
             </div>
-            <textarea placeholder="Your Message" name="text" required></textarea>
+            <textarea placeholder="Your Message" name="message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
@@ -140,10 +144,9 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal" defer crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js" defer crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
 </body>
-
 </html>
