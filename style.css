@@ -11,6 +11,11 @@ body {
     color: #fff;
 }
 
+/* Prevent body scroll when mobile menu is open */
+.no-scroll {
+    overflow: hidden;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -43,6 +48,14 @@ body {
 .navbar a:hover,
 .navbar a.active {
     color: #4B7043;
+}
+
+/* Keyboard focus visibility */
+.navbar a:focus,
+.btn:focus,
+#menu-icon:focus {
+    outline: 2px dashed #4B7043;
+    outline-offset: 4px;
 }
 
 #menu-icon {
@@ -358,6 +371,15 @@ body {
 .footer-iconTop a i {
     font-size: 2.4rem;
     color: #1f242d;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* Responsive Design */
